@@ -1,22 +1,78 @@
-#0 — 15,527: 0% tax
+import random
+stock = [[i, j] for i in range(7) for j in range(i, 7)]
+pl = []
+com = []
+k = 0
+sn = []
+status = ['player','computer']
+# for i in range(7):
+#     domino.append([0,i])
+# for i in range (6):
+#     domino.append([1, i+1])
+# for i in range (5):
+#     domino.append([2, i+2])
+# for i in range (4):
+#     domino.append([3, i+3])
+# for i in range(3):
+#     domino.append([4, i+4])
+# for i in range(2):
+#     domino.append([5, i+5])
+# for i in range(1):
+#     domino.append([6, i+6])
 
-#15,528 — 42,707: 15% tax
+while True:
+    random.shuffle(stock, random.random)
+    for i in range(14):
+        if stock[i] == [6, 6] or [5, 5]:
+            k=1
+    if k ==1:
+        break
 
-#42,708 — 132,406: 25% tax
+for i in range(7):
+    pl.append(stock[i])
+    stock.remove(stock[i])
 
-#132,407 and more: 28% tax
+for i in range(7):
+    com.append(stock[i])
+    stock.remove(stock[i])
 
-x = int(input('ваш доход?'))
-if x <= 15527:
-  print('Налог за', x ,'составляет 0%. Это 0 долларов!')
-if x >= 15528 and x<=42707:
-  tax = round(x//100*15)
-  print('Налог за', x ,'составляет 15%. Это',tax, 'долларов!')
-if x >= 42708 and x<=132406:
-  tax = round(x//100*25)
-  print('Налог за', x ,'составляет 25%. Это',tax, 'долларов!')
-if x >= 132407:
-  tax = round(x//100*28)
-  print('Налог за', x ,'составляет 28%. Это',tax, 'долларов!')
+
+for i in pl:
+    if i == [6,6]:
+        sn.append(i)
+        pl.remove(i)
+        print('status:',status[0])
+        k = 2
+
+for i in com:
+    if i == [6,6]:
+        sn.append(i)
+        com.remove(i)
+        print('status:',status[1])
+        k =2
+
+if k != 2:
+    for i in pl:
+        if i == [5,5]:
+            sn.append(i)
+            pl.remove(i)
+            print('status:',status[0])
+
+    for i in com:
+        if i == [5,5]:
+            sn.append(i)
+            com.remove(i)
+            print('status:',status[1])
+
+
+print('Stock:', stock)
+print('Player:', pl)
+print('Computer:', com)
+print('snake', sn)
+
+
+
+
+
 
 
