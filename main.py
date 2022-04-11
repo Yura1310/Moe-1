@@ -5,21 +5,6 @@ com = []
 k = 0
 sn = []
 status = ['player','computer']
-# for i in range(7):
-#     domino.append([0,i])
-# for i in range (6):
-#     domino.append([1, i+1])
-# for i in range (5):
-#     domino.append([2, i+2])
-# for i in range (4):
-#     domino.append([3, i+3])
-# for i in range(3):
-#     domino.append([4, i+4])
-# for i in range(2):
-#     domino.append([5, i+5])
-# for i in range(1):
-#     domino.append([6, i+6])
-
 while True:
     random.shuffle(stock, random.random)
     for i in range(14):
@@ -48,7 +33,7 @@ for i in com:
     if i == [6,6]:
         sn.append(i)
         com.remove(i)
-        print('status:',status[1])
+        print('status:',status[0])
         k =2
 
 if k != 2:
@@ -56,7 +41,7 @@ if k != 2:
         if i == [5,5]:
             sn.append(i)
             pl.remove(i)
-            print('status:',status[0])
+            print('status:',status[1])
 
     for i in com:
         if i == [5,5]:
