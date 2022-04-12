@@ -4,14 +4,14 @@ pl = []
 com = []
 k = 0
 sn = []
-status = ['player','computer']
+status = ('player','computer')
 while True:
-    random.shuffle(stock, random.random)
-    for i in range(14):
-        if stock[i] == [6, 6] or [5, 5]:
-            k=1
-    if k ==1:
-        break
+  random.shuffle(stock, random.random)
+  for i in range(1):
+      if stock[i] == [6, 6] or [5, 5]:
+          k=1
+  if k == 1:
+      break
 
 for i in range(7):
     pl.append(stock[i])
@@ -26,14 +26,14 @@ for i in pl:
     if i == [6,6]:
         sn.append(i)
         pl.remove(i)
-        print('status:',status[0])
+        status = "computer"
         k = 2
 
 for i in com:
     if i == [6,6]:
         sn.append(i)
         com.remove(i)
-        print('status:',status[0])
+        status = "player"
         k =2
 
 if k != 2:
@@ -41,20 +41,20 @@ if k != 2:
         if i == [5,5]:
             sn.append(i)
             pl.remove(i)
-            print('status:',status[1])
+            status = "computer"
 
     for i in com:
         if i == [5,5]:
             sn.append(i)
             com.remove(i)
-            print('status:',status[1])
+            status = "player"
 
 
 print('Stock:', stock)
 print('Player:', pl)
 print('Computer:', com)
 print('snake', sn)
-
+print('status:',status)
 
 
 
