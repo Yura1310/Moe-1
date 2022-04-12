@@ -1,38 +1,16 @@
-# Create two lists
-# - letters contains !random letters of the Latin alphabet
-# - vowels contains only the 5 vowels
+temp_above_80 = 0
 
-# Define a function choose_vowels() that, given the list letters, 
-# would return only those letters that are vowels. 
+daily_temp_c = [20.5, 19, 15, 25, 27, 30, 31, 29, 26, 21,
+                19, 25, 27.5, 28, 26, 29.5, 31, 27.5, 26, 29,
+                18, 17.5, 17, 16.5, 19, 20, 25, 26.5, 27, 28,
+                20.5, 19, 25, 27.5, 28, 26, 15, 25, 27, 28]
 
-# Print out the result.
 
-# Sample of the list letters:
-# ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n', 'g', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e']
-
-# Sample output:
-# ['o', 'a', 'i', 'a', 'u', 'a', 'e']
-
-import random
-gl = ["a","e","i","o","u","y"]
-a = ["q","w",'e',"r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
-k = []
-w = []
-for i in range(random.randint(0,50)):
-  e = random.randint(0,25)
-  w.append(a[e])
-print(w)
-for i in range(len(w)):
-  for l in range(len(gl)):
-    if w[i] == gl[l]:
-      k.append(w[i])
-print(k)
-    
-  
-  
-  
-  
-  
-
+temp_c = 5/9 * (80-32)
+print(temp_c)
+for i in daily_temp_c:
+  if i >= temp_c:
+    temp_above_80 +=1
+print(temp_above_80)
 
 
