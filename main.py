@@ -1,63 +1,38 @@
+# Create two lists
+# - letters contains !random letters of the Latin alphabet
+# - vowels contains only the 5 vowels
+
+# Define a function choose_vowels() that, given the list letters, 
+# would return only those letters that are vowels. 
+
+# Print out the result.
+
+# Sample of the list letters:
+# ['p', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n', 'g', 'l', 'a', 'n', 'g', 'u', 'a', 'g', 'e']
+
+# Sample output:
+# ['o', 'a', 'i', 'a', 'u', 'a', 'e']
+
 import random
-stock = [[i, j] for i in range(7) for j in range(i, 7)]
-pl = []
-com = []
-k = 0
-sn = []
-status = ('player','computer')
-while True:
-  random.shuffle(stock, random.random)
-  for i in range(1):
-      if stock[i] == [6, 6] or [5, 5]:
-          k=1
-  if k == 1:
-      break
-
-for i in range(7):
-    pl.append(stock[i])
-    stock.remove(stock[i])
-
-for i in range(7):
-    com.append(stock[i])
-    stock.remove(stock[i])
-
-
-for i in pl:
-    if i == [6,6]:
-        sn.append(i)
-        pl.remove(i)
-        status = "computer"
-        k = 2
-
-for i in com:
-    if i == [6,6]:
-        sn.append(i)
-        com.remove(i)
-        status = "player"
-        k =2
-
-if k != 2:
-    for i in pl:
-        if i == [5,5]:
-            sn.append(i)
-            pl.remove(i)
-            status = "computer"
-
-    for i in com:
-        if i == [5,5]:
-            sn.append(i)
-            com.remove(i)
-            status = "player"
-
-
-print('Stock:', stock)
-print('Player:', pl)
-print('Computer:', com)
-print('snake', sn)
-print('status:',status)
-
-
-
+gl = ["a","e","i","o","u","y"]
+a = ["q","w",'e',"r","t","y","u","i","o","p","a","s","d","f","g","h","j","k","l","z","x","c","v","b","n","m"]
+k = []
+w = []
+for i in range(random.randint(0,50)):
+  e = random.randint(0,25)
+  w.append(a[e])
+print(w)
+for i in range(len(w)):
+  for l in range(len(gl)):
+    if w[i] == gl[l]:
+      k.append(w[i])
+print(k)
+    
+  
+  
+  
+  
+  
 
 
 
